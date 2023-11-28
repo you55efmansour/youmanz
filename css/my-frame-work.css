@@ -1,0 +1,88 @@
+/* my frame work start */
+.w-32 {
+    width: 32px;
+}
+.w-10{
+    width: 10%;
+}
+.w-20{
+    width: 20%;
+}
+.w-40 {
+    width: 40%;
+}
+.w-15 {
+    width: 15%;
+}
+.w-85 {
+    width: 85%;
+}
+/* small  */
+@media (max-width: 768px) {
+    .w-sm-10 {
+        width: 10% !important;
+    }
+    .w-sm-20 {
+        width: 20% !important;
+    }
+    .w-sm-25 {
+        width: 25% !important;
+    }
+    .w-sm-40 {
+        width: 40% !important;
+    }
+    .w-sm-50 {
+        width: 50% !important;
+    }
+    .w-sm-100 {
+        width: 100% !important;
+    }
+    
+}
+/* mid  */
+@media (min-width: 768px) {
+    .w-md-10 {
+        width: 10% !important;
+    }
+    .w-md-20 {
+        width: 20% !important;
+    }
+    .w-md-25 {
+        width: 25% !important;
+    }
+    .w-md-40 {
+        width: 40% !important;
+    }
+    .w-md-50 {
+        width: 50% !important;
+    }
+    .w-md-100 {
+        width: 100% !important;
+    }
+}
+/* large  */
+@media (min-width: 992px) {
+    .w-lg-10 {
+        width: 10% !important;
+    }
+    .w-lg-20 {
+        width: 20% !important;
+    }
+    .w-lg-25 {
+        width: 25% !important;
+    }
+    .w-lg-40 {
+        width: 40% !important;
+    }
+    .w-lg-50 {
+        width: 50% !important;
+    }
+    .w-lg-100 {
+        width: 100% !important;
+    }
+}
+.fs-14 {
+    font-size: 14px;
+}
+
+/* my frame work end */

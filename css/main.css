@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --main-color: rgb(43, 97, 43);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: black;
+}
+input:focus{
+    outline: none;
+}
+textarea{
+resize: none;
+}
+textarea:focus{
+outline: none;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/* home start  */
+.p-pic {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+.navbar a{
+    cursor: pointer;
+}
+.list a:hover {
+    color: var(--main-color) !important;
+}
+/* home end  */
