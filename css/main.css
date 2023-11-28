@@ -45,4 +45,17 @@ body {
 .list a:hover {
     color: var(--main-color) !important;
 }
+.post-container {
+    max-width: 600px;
+}
+.post-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post-img img{
+    min-width: none;
+    max-height: 300px;
+    max-width: 100%;
+}
 /* home end  */
