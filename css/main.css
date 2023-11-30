@@ -5,7 +5,7 @@
 }
 
 :root {
-    --main-color: rgb(43, 97, 43);
+    --main-color: rgb(43, 163, 43);
 }
 
 ul {
@@ -13,10 +13,10 @@ ul {
     padding: 0;
 }
 a{
-    text-decoration: none;
-    border: none;
-    outline: none;
-    color: black;
+    text-decoration: none !important;
+    border: none !important;
+    outline: none !important;
+    color: black !important;
 }
 input:focus{
     outline: none;
@@ -46,7 +46,7 @@ body {
     color: var(--main-color) !important;
 }
 .post-container {
-    max-width: 600px;
+    max-width: 600px !important;
 }
 .post-img {
     display: flex;
