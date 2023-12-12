@@ -13,10 +13,10 @@ ul {
     padding: 0;
 }
 a{
-    text-decoration: none !important;
-    border: none !important;
-    outline: none !important;
-    color: black !important;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: black ;
 }
 input:focus{
     outline: none;
@@ -42,6 +42,16 @@ body {
 .navbar a{
     cursor: pointer;
 }
+.navbar .btns a {
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+    padding: 5px;
+    color: var(--main-color);
+}
+.navbar .btns a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
 .list a:hover {
     color: var(--main-color) !important;
 }
@@ -59,3 +69,9 @@ body {
     max-width: 100%;
 }
 /* home end  */
+
+/* login&logout start */
+.logo {
+    cursor:default;
+}
+/* login&logout end */

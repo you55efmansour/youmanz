@@ -13,7 +13,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
             <!-- google fonts end-->
-    <title>Youmanz</title>
+    <title>Profile</title>
 </head>
 <body>
     <div class="home">
@@ -22,10 +22,14 @@
             <div class="container">
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
-                      <a href="#" class="navbar-brand fw-bold fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
+                      <a class="navbar-brand fw-bold fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
+                      <div class="list d-flex gap-4">
+                        <a href="home.html" class="fw-bold text-secondary">Home</a>
+                        <a href="profile.html" class="fw-bold">Profile</a>
+                      </div>
+
                       <div class="right d-flex gap-2 btns">
-                          <a href="login.html" class="fw-semibold">Login</a>
-                          <a href="register.html" class="fw-semibold">Register</a>
+                        <a href="login.html" class="fw-semibold">Logout</a>
                       </div>
                     </div>
                 </nav>
@@ -43,7 +47,7 @@
     </div>
     <!-- scripts start -->
     <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./js/youmanz.js"></script>
+    <script src="./js/profile.js"></script>
     <!-- scripts  end-->
 </body>
 </html>
