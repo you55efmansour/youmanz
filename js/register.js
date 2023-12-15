@@ -5,12 +5,6 @@ const userName = document.getElementById("user-name");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 
-let pattern = /\d{6,}/ig;
-
-
-console.log(pattern.test("0190"));
-
-
 registerForm.addEventListener("submit",(e)=>{
     e.preventDefault()
     let inf = {

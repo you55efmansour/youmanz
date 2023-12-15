@@ -1,7 +1,6 @@
 axios.get("https://tarmeezacademy.com/api/v1/posts?limit=5")
 .then((res)=>{ 
     let posts = res.data.data
-    console.log(posts);
     let postContainer = document.getElementById("posts")
     for (let i = 0; i < posts.length; i++) {
         let content = posts[i];
