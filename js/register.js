@@ -1,3 +1,5 @@
+const { default: axios } = require("axios");
+
 let registerForm = document.getElementById("register-form");
 let error = document.getElementById("error")
 const name = document.getElementById("name");
