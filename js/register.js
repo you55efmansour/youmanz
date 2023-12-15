@@ -1,4 +1,4 @@
-const axios = require('axios/dist/node/axios.cjs');
+const axios = require('../node_modules/axios/dist/browser/axios.cjs');
 let registerForm = document.getElementById("register-form");
 let error = document.getElementById("error")
 const name = document.getElementById("name");
