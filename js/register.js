@@ -1,12 +1,18 @@
 let registerForm = document.getElementById("register-form");
 let error = document.getElementById("error")
+const name = document.getElementById("name");
+const userName = document.getElementById("user-name");
+const email = document.getElementById("email");
+const password = document.getElementById("password");
+
+let pattern = /\d{6,}/ig;
+
+
+console.log(pattern.test("0190"));
+
 
 registerForm.addEventListener("submit",(e)=>{
     e.preventDefault()
-    const name = document.getElementById("name");
-    const userName = document.getElementById("user-name");
-    const email = document.getElementById("email");
-    const password = document.getElementById("password");
     let inf = {
         "username": userName.value,
         "password": password.value,
@@ -15,11 +21,13 @@ registerForm.addEventListener("submit",(e)=>{
     }
     axios.post('https://tarmeezacademy.com/api/v1/register', inf)
     .then(
-        (res)=>{window.location='/login.html'},
+        (res)=>{
+            pattern.test(`${password.value}`) === true?window.location='/login.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
+        },
         (rej)=>{
             error.classList.remove("d-none")
             let message = rej.response.data.message
-            error.innerHTML = message
+            error.innerHTML = `${message} <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`
         }
     )
 })
