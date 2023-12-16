@@ -1,5 +1,3 @@
-const { default: axios } = require("axios");
-
 let logIn = document.getElementById("login");
 let error = document.getElementById("error")
 const userName = document.getElementById("user-name");
