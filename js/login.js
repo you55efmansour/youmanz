@@ -14,7 +14,7 @@ logIn.addEventListener("click",(e)=>{
     axios.post('https://tarmeezacademy.com/api/v1/login', inf)
     .then(
         (res)=>{
-            window.location='youmanz/home.html'
+            window.location='home.html'
         },
         (rej)=>{
             error.classList.remove("d-none")
