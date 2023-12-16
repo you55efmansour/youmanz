@@ -8,22 +8,21 @@ const pattern = /\d{6,}/
 
 registerForm.addEventListener("submit",(e)=>{
     e.preventDefault()
-    window.location='login.html'
-    // let inf = {
-    //     "username": userName.value,
-    //     "password": password.value,
-    //     "name": name.value,
-    //     "email": email.value,
-    // }
-    // axios.post('https://tarmeezacademy.com/api/v1/register', inf)
-    // .then(
-    //     (resp)=>{
-    //         pattern.test(`${password.value}`) === true?window.location='login.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
-    //     },
-    //     (rej)=>{
-    //         error.classList.remove("d-none")
-    //         let message = rej.response.data.message
-    //         error.innerHTML = `${message} <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`
-    //     }
-    // )
+    let inf = {
+        "username": userName.value,
+        "password": password.value,
+        "name": name.value,
+        "email": email.value,
+    }
+    axios.post('https://tarmeezacademy.com/api/v1/register', inf)
+    .then(
+        (resp)=>{
+            pattern.test(`${password.value}`) === true?window.location='login.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
+        },
+        (rej)=>{
+            error.classList.remove("d-none")
+            let message = rej.response.data.message
+            error.innerHTML = `${message} <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`
+        }
+    )
 })
