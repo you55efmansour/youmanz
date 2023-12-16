@@ -13,7 +13,7 @@ registerForm.addEventListener("submit",(e)=>{
         "name": name.value,
         "email": email.value,
     }
-    fetch.post('https://tarmeezacademy.com/api/v1/register', inf)
+    axios.post('https://tarmeezacademy.com/api/v1/register', inf)
     .then(
         (res)=>{
             pattern.test(`${password.value}`) === true?window.location='/login.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
