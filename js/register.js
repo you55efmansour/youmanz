@@ -4,6 +4,7 @@ const name = document.getElementById("name");
 const userName = document.getElementById("user-name");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
+const pattern = /\d{6,}/
 
 registerForm.addEventListener("submit",(e)=>{
     e.preventDefault()
