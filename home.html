@@ -28,7 +28,7 @@
                         <a href="profile.html" class="fw-bold text-secondary">Profile</a>
                       </div>
 
-                      <div class="right d-flex gap-2 btns">
+                      <div class="right d-flex gap-2 ms-2 btns">
                           <a href="login.html" class="fw-semibold">Logout</a>
                       </div>
                     </div>
@@ -45,9 +45,40 @@
         </div>
         <!-- end content -->
     </div>
+    <button type="button" class="btn btn-primary add-post rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#post-modal">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      
+      <!-- Modal -->
+      <div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
+          <div class="modal-content">
+            <div class="modal-body">
+                <form id="register-form" class="mt-5 mb-4 w-100">
+                    <div class="mb-3">
+                        <textarea class="form-control fw-semibold" placeholder="What are you think about" id="post-text"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <div class="post-img-up rounded overflow-hidden mb-2"></div>
+                        <label class="custom-file-upload rounded border border-success d-flex flex-column align-items-center justify-content-center">
+                            <input type="file" class="form-control" id="post-img" aria-describedby="emailHelp">
+                            <i class="fa-solid fa-images"></i>
+                            image
+                        </label>
+                    </div>
+                    <div class="modal-btns">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="submit" class="btn btn-primary send-post ms-3">post</button>
+                    </div>
+                  </form>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 <!-- scripts start -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 <script src="./js/home.js"></script>
 <!-- scripts  end-->
 </html>

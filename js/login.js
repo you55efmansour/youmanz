@@ -12,6 +12,7 @@ logIn.addEventListener("click",(e)=>{
     axios.post('https://tarmeezacademy.com/api/v1/login', inf)
     .then(
         (res)=>{
+            localStorage.setItem("token",res.data.token)
             window.location='home.html'
         },
         (rej)=>{

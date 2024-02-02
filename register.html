@@ -39,7 +39,7 @@
             <div class="container post-container d-flex justify-content-center align-items-center" id="posts">
                 <div class="login-card w-100 rounded shadow border d-flex flex-column justify-content-center align-items-center py-3 px-5 my-4">
                     <div class="logo fw-bold fs-1 mb-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</div>
-                    <div class="alert d-none alert-danger d-flex align-items-center mt-3" id="error"></div>
+                    <div class="alert d-none alert-danger d-flex align-items-center mt-3" id="error-rej"></div>
                     <form id="register-form" class="mt-5 mb-4 w-100">
                         <div class="mb-3">
                           <label for="exampleInputName1" class="form-label">Name</label>
@@ -54,10 +54,22 @@
                           <input type="email" class="form-control" placeholder="aaa@bb.cc" id="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
+                          <div class="prof-img rounded overflow-hidden mb-2"></div>
+                          <label class="custom-file-upload rounded w-100 border border-success d-flex flex-column align-items-center justify-content-center">
+                              <input type="file" class="form-control" id="prof-img" aria-describedby="emailHelp">
+                              <i class="fa-solid fa-images"></i>
+                              image
+                          </label>
+                      </div>
+                        <div class="mb-3">
                           <label for="exampleInputPassword1" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="password">
+                          <input type="password" class="form-control" placeholder="should be 6 or more" id="password">
                         </div>
-                        <button type="submit" class="btn btn-success">Register</button>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Re-type Password</label>
+                          <input type="password" class="form-control" id="re-password">
+                        </div>
+                        <button type="submit" class="btn btn-success" id="send">Register</button>
                       </form>
                 </div>
             </div>
