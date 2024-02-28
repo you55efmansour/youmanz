@@ -103,6 +103,9 @@ input[type="file"] {
     right: 5%;
     bottom: 10%;
 }
+.comment{
+    background: none;
+}
 /* home end  */
 
 /* login&logout start */

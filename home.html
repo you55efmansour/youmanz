@@ -13,7 +13,7 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
             <!-- google fonts end-->
-    <title>Home</title>
+    <title>home</title>
 </head>
 <body>
     <div class="home">
@@ -22,7 +22,7 @@
             <div class="container">
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
-                      <a class="navbar-brand fw-bold fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
+                      <a class="navbar-brand fw-bold border rounded p-2 fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
                       <div class="list d-flex gap-4">
                         <a href="home.html" class="fw-bold">Home</a>
                         <a href="profile.html" class="fw-bold text-secondary">Profile</a>
@@ -46,10 +46,10 @@
         <!-- end content -->
     </div>
     <button type="button" class="btn btn-primary add-post rounded-circle d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#post-modal">
-        <i class="fa-solid fa-plus"></i>
-      </button>
+      <i class="fa-solid fa-plus"></i>
+    </button>
       
-      <!-- Modal -->
+      <!-- post Modal start -->
       <div class="modal fade" id="post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
           <div class="modal-content">
@@ -75,6 +75,7 @@
           </div>
         </div>
       </div>
+      <!-- post Modal end -->
 </body>
 <!-- scripts start -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

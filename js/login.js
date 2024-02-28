@@ -5,6 +5,8 @@ const password = document.getElementById("password");
 
 logIn.addEventListener("click",(e)=>{
     e.preventDefault()
+    logIn.innerHTML=`<i class="fa-solid fa-spinner fa-spin"></i>`
+
     let inf = {
         "username": userName.value,
         "password": password.value,
@@ -16,6 +18,7 @@ logIn.addEventListener("click",(e)=>{
             window.location='home.html'
         },
         (rej)=>{
+            logIn.innerHTML=`Login`
             error.classList.remove("d-none")
             let message = rej.response.data.message
             error.innerHTML = `${message} <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`
