@@ -79,19 +79,19 @@ let sendPost = document.querySelector(".send-post")
 let img = document.querySelector("#post-img")
 
 // show the img while creating post 
+const postImgD = document.querySelector(".post-img-up");
 img.addEventListener("change",()=>{
-    const postImgD = document.querySelector(".post-img-up");
     const src = URL.createObjectURL(img.files[0])
     img.files[0] ? postImgD.innerHTML=`<img class="img-fluid" src="${src}" alt=""></img>`:"";
 })
 
 // create new post 
 sendPost.addEventListener("click",(e)=>{
-    let text = document.querySelector("#post-text").value
+    let text = document.querySelector("#post-text")
     const token = localStorage.getItem("token")
     e.preventDefault()
     let inf = new FormData()
-    inf.append("body",text)
+    inf.append("body",text.value)
     img.files[0]? inf.append("image",img.files[0]):"";
     axios.post('https://tarmeezacademy.com/api/v1/posts', inf , {
         headers:{
@@ -108,6 +108,8 @@ sendPost.addEventListener("click",(e)=>{
             }, 500);
             postContainer.innerHTML=""
             getPosts()
+            text.value=""
+            img.files.pop()
             clearTimeout(sc)
         },
         (rej)=>{
@@ -133,3 +135,4 @@ window.addEventListener("scroll",()=>{
     }
 })
 //
+console.log(img.files);
