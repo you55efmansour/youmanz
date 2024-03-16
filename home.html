@@ -76,6 +76,33 @@
         </div>
       </div>
       <!-- post Modal end -->
+      <!-- edit Modal start -->
+      <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="register-form" class="mt-5 mb-4 w-100">
+                        <div class="mb-3">
+                            <textarea class="form-control fw-semibold" placeholder="What are you think about" id="edit-text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="edit-img-up post-img rounded overflow-hidden mb-2"></div>
+                            <label class="custom-file-upload rounded border border-success d-flex flex-column align-items-center justify-content-center">
+                                <input type="file" class="form-control" id="edit-img" aria-describedby="emailHelp">
+                                <i class="fa-solid fa-images"></i>
+                                image
+                            </label>
+                        </div>
+                        <div class="modal-btns">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary send-edit ">re-post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- post Modal end -->
 </body>
 <!-- scripts start -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
