@@ -34,10 +34,10 @@ function getPosts( reload = true, pageNum = 1){
                     <i class="fa-solid fa-ellipsis-vertical fs-14 p-2 action"></i>
                 </div>
                 <div class="position-absolute rounded action action-list action-list${content.id} p-1 d-none">
-                    <button type="button" class="btn my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(content))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
+                    <button type="button" class="btn btn-primary my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(content))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
                         edit
                     </button>
-                    <button type="button" class="btn my-1 d-block w-100">
+                    <button type="button" onclick="deletePost(${content.id})" class="btn btn-danger my-1 d-block w-100" data-bs-toggle="modal" data-bs-target="#delete-modal">
                         delete
                     </button>
                 </div>
@@ -283,6 +283,37 @@ function editPost(content) {
             }
             getAlert(message)
         })
+    })
+}
+
+function deletePost(id) {
+    let deleteBtn = document.querySelector(".send-delete")
+    deleteBtn.addEventListener("click",(e)=>{
+        e.preventDefault()
+        let token = localStorage.getItem("token")
+    axios.delete(`https://tarmeezacademy.com/api/v1/posts/${id}`, {
+        headers:{
+            "authorization":`Bearer ${token}`
+        }
+    })
+    .then(
+        (res)=>{
+            const modal = document.querySelector('#delete-modal')
+            modalHide(modal)
+            getPosts()
+        },
+        (rej)=>{
+            const modal = document.querySelector('#delete-modal')
+            modalHide(modal)
+            let message = ""
+            if (rej.response.data.error_message) {
+                message = rej.response.data.error_message
+            }else{
+                message = rej.response.data.message
+            }
+            getAlert(message)
+        }
+    )
     })
 }
 // end action list

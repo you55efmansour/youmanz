@@ -102,7 +102,24 @@
             </div>
         </div>
       </div>
-      <!-- post Modal end -->
+      <!-- edit Modal end -->
+      <!-- delete Modal start -->
+      <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="register-form" class="mt-5 mb-4 w-100">
+                        <p>are you sure that you want delete this post?</p>
+                        <div class="modal-btns ms-3">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">no</button>
+                            <button type="submit" class="btn btn-danger send-delete ms-2 ">yes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- delete Modal end -->
 </body>
 <!-- scripts start -->
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
