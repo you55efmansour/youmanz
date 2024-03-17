@@ -30,9 +30,8 @@ registerForm.addEventListener("submit",(e)=>{
     axios.post('https://tarmeezacademy.com/api/v1/register', inf,)
     .then(
         (resp)=>{
-            // sendBtn.innerHTML=`<i class="fa-solid fa-spinner fa-spin"></i>`
             if (password.value === rePassword.value) {
-                pattern.test(`${password.value}`) === true?window.location='login.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
+                pattern.test(`${password.value}`) === true?window.location='index.html':error.innerHTML = `Password should be more than or equal 6 <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
             }else{
                 error.innerHTML = `It's not the same password  <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`;
             }

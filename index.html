@@ -13,18 +13,19 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
             <!-- google fonts end-->
-    <title>Youmanz</title>
+    <title>Login</title>
 </head>
 <body>
-    <div class="home">
+    <div class="home overflow-hidden vh-100">
         <!-- start nav  -->
         <div class="nav-bar bg-body-tertiary shadow">
             <div class="container">
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
                       <a href="#" class="navbar-brand fw-bold fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
+
                       <div class="right d-flex gap-2 btns">
-                          <a href="login.html" class="fw-semibold">Login</a>
+                        <a href="index.html" class="fw-semibold">Login</a>
                           <a href="register.html" class="fw-semibold">Register</a>
                       </div>
                     </div>
@@ -33,9 +34,24 @@
         </div>
         <!-- end nav  -->
         <!-- start content -->
-        <div class="content">
+        <div class="content vh-100">
             <!-- start container  -->
-            <div class="container post-container" id="posts">
+            <div class="container h-100 post-container d-flex justify-content-center align-items-center" id="posts">
+                <div class="login-card w-100 rounded border d-flex flex-column justify-content-center align-items-center py-3 px-5">
+                    <div class="logo fw-bold fs-1 mb-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</div>
+                    <div class="alert d-none alert-danger d-flex align-items-center mt-3" id="error"></div>
+                    <form class="mt-5 mb-4 w-100">
+                        <div class="mb-3">
+                          <label for="exampleInputEmail1" class="form-label">Email address</label>
+                          <input type="email" class="form-control" id="user-name" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="exampleInputPassword1" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="password">
+                        </div>
+                        <button type="submit" class="btn btn-success" id="login">Login</button>
+                      </form>
+                </div>
             </div>
             <!-- end container  -->
         </div>
@@ -43,7 +59,7 @@
     </div>
     <!-- scripts start -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/youmanz.js"></script>
+    <script src="./js/login.js"></script>
     <!-- scripts  end-->
 </body>
 </html>
