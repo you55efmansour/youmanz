@@ -125,3 +125,10 @@ input[type="file"] {
     cursor:default;
 }
 /* login&logout end */
+
+/* profile start */
+.prof-pic {
+    width: 70px;
+    height: 70px;
+}
+/* profile end  */

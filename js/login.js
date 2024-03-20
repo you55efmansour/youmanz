@@ -15,6 +15,7 @@ logIn.addEventListener("click",(e)=>{
     .then(
         (res)=>{
             localStorage.setItem("token",res.data.token)
+            localStorage.setItem("user",JSON.stringify(res.data))
             window.location='home.html'
         },
         (rej)=>{

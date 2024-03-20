@@ -27,7 +27,11 @@ registerForm.addEventListener("submit",(e)=>{
     inf.append("name", name.value)
     inf.append("email", email.value)
     inf.append("image",img.files[0])
-    axios.post('https://tarmeezacademy.com/api/v1/register', inf,)
+    axios.post('https://tarmeezacademy.com/api/v1/register', inf,{
+        headers:{
+            "Content-Type":"multipart/from-data",
+        }
+})
     .then(
         (resp)=>{
             if (password.value === rePassword.value) {

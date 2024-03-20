@@ -22,15 +22,16 @@
             <div class="container">
                 <nav class="navbar bg-body-tertiary">
                     <div class="container-fluid">
-                      <a class="navbar-brand fw-bold fs-3"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
-                      <div class="list d-flex gap-4">
-                        <a href="home.html" class="fw-bold text-secondary">Home</a>
-                        <a href="profile.html" class="fw-bold">Profile</a>
-                      </div>
-
-                      <div class="right d-flex gap-2 btns">
-                        <a href="index.html" class="fw-semibold">Logout</a>
-                      </div>
+                        <a href="home.html" class="navbar-brand fw-bold border rounded p-2 fs-5"><span class="text-success">Y</span>ou<span class="text-success">M</span>anz</a>
+                        
+                        <div class="list d-flex gap-3">
+                            <a href="home.html" class="fw-bold text-secondary">Home</a>
+                            <a href="profile.html" class="fw-bold">Profile</a>
+                        </div>
+                        
+                        <div class="right d-flex gap-2 ms-2 btns">
+                            <a href="index.html" class="fw-semibold">Logout</a>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -38,16 +39,79 @@
         <!-- end nav  -->
         <!-- start content -->
         <div class="content">
-            <!-- start container  -->
-            <div class="container post-container" id="posts">
+            <!-- start prof container  -->
+            <div class="container post-container prof-container" id="posts">
+                <!-- prof card start  -->
+                <div class="card my-4 shadow inf-card">
+                </div>
+                <!-- prof card end -->
+                
+                <div class="my-4 fs-4 fw-bold"><span class="posts-name">youssef</span>'s Posts</div>
+
+                <!-- post card start  -->
+                <div class="prof-posts">
+                    a
+                </div>
+                <!-- post card end -->
+            
             </div>
-            <!-- end container  -->
+            
         </div>
-        <!-- end content -->
+        <!-- end prof container  -->
+        
     </div>
-    <!-- scripts start -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="./js/profile.js"></script>
-    <!-- scripts  end-->
+    <!-- end content -->
+    <!-- edit Modal start -->
+        <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form id="register-form" class="mt-5 mb-4 w-100">
+                        <div class="mb-3">
+                            <textarea class="form-control fw-semibold" placeholder="What are you think about" id="edit-text"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <div class="edit-img-up post-img rounded overflow-hidden mb-2"></div>
+                            <label class="custom-file-upload rounded border border-success d-flex flex-column align-items-center justify-content-center">
+                                <input type="file" class="form-control" id="edit-img" aria-describedby="emailHelp">
+                                <i class="fa-solid fa-images"></i>
+                                image
+                            </label>
+                        </div>
+                        <div class="modal-btns">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary send-edit ">re-post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- edit Modal end -->
+        <!-- delete Modal start -->
+        <div class="modal fade" id="delete-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog d-flex align-items-center justify-content-center h-100">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <form id="register-form" class="mt-5 mb-4 w-100">
+                            <p>are you sure that you want delete this post?</p>
+                            <div class="modal-btns ms-3">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">no</button>
+                                <button type="submit" class="btn btn-danger send-delete ms-2 ">yes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- delete Modal end -->
+
+
 </body>
+<!-- scripts start -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="./js/profile.js"></script>
+<script src="./js/mainLogic.js"></script>
+<!-- scripts  end-->
 </html>
