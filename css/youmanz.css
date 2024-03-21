@@ -108,6 +108,7 @@ input[type="file"] {
 }
 .comment-btn {
     cursor: pointer;
+    width: fit-content;
 }
 .action-list{
     right: 20px;

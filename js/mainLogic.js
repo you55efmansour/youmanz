@@ -61,3 +61,7 @@ function addComment(id) {
     })
 }
 // end comments 
+
+const token = localStorage.getItem("token")
+
+token?"":window.location="index.html"

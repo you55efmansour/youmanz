@@ -275,3 +275,11 @@ function sendUserID(){
     let user = JSON.parse(a)
     window.location=`profile.html?userid=${user.user.id}`
 }
+
+// log out
+
+const logOut = document.querySelector(".logout")
+logOut.addEventListener("click",()=>{
+    localStorage.removeItem("token")
+    localStorage.removeItem("user")
+})
