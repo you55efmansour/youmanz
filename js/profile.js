@@ -12,14 +12,14 @@ function getUserInfo() {
         (res)=>{
             let inf = res.data.data
             let infData =`
-            <div class="card-body d-flex align-items-center">
+            <div class="card-body d-flex flex-column flex-md-row align-items-center">
                         <div href="profile.html" class="prof-pic border border-3 border-dark overflow-hidden rounded-circle">
                             <img class="img-fluid h-100 w-100" src="${inf.profile_image}" alt="">
                         </div>
                         <div class="user-inf ms-3 me-4 fw-semibold">
-                            <div class="mt-1">${inf.email}</div>
-                            <div class="mt-1">${inf.username}</div>
-                            <div class="mt-1">${inf.name}</div>
+                            <div class="my-1">${inf.email}</div>
+                            <div class="my-1">${inf.username}</div>
+                            <div class="my-1">${inf.name}</div>
                         </div>
                         <div class="user-num-inf ms-5">
                             <div class="fs-1 fw-semibold">${inf.posts_count}<span class="text-black-50 fw-normal fs-6">Posts</span></div>
@@ -45,20 +45,17 @@ function getUserPosts() {
             postCard.innerHTML =""
             for (let i = 0; i < post.length; i++) {
                 
-                
                 let postData =`
                 <div class="card my-4 shadow">
-                <h5 class="card-header d-flex align-items-center gap-3 position-relative">
+                <h5 class="card-header card-header${post[i].id} d-flex align-items-center gap-3 position-relative">
                     <a href="profile.html" class="p-pic rounded-circle">
                         <img class="img-fluid h-100 w-100" src="${(post[i].author.profile_image).length?post[i].author.profile_image:"../images/defult.png"}" alt="">
                     </a>
                     <div>@${post[i].author.name}</div>
                     <p class="text-black-50 fw-semibold flex-grow-1 text-end fs-14">${post[i].created_at}</p>
-                    <div class="action-btn action" onclick="showTheList(${post[i].id})">
-                        <i class="fa-solid fa-ellipsis-vertical fs-14 p-2 action"></i>
-                    </div>
+
                     <div class="position-absolute rounded action action-list action-list${post[i].id} p-1 d-none">
-                        <button type="button" class="btn btn-primary my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(post[i]))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
+                        <button type="button" class="btn btn-success my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(post[i]))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
                             edit
                         </button>
                         <button type="button" onclick="deletePost(${post[i].id})" class="btn btn-danger my-1 d-block w-100" data-bs-toggle="modal" data-bs-target="#delete-modal">
@@ -88,7 +85,7 @@ function getUserPosts() {
                             
                             <div class="input-group my-3">
                                 <input id="comment-input${post[i].id}" class="form-control" placeholder="type your comment..." type="text" >
-                                <button class="btn btn-primary" onclick="addComment(${post[i].id})" type="button">send</button>
+                                <button class="btn btn-success" onclick="addComment(${post[i].id})" type="button">send</button>
                             </div>
     
                             <div onclick="hideComments(${post[i].id})" class="bg-secondary-subtle comment-btn hide-comments${post[i].id} text-center w-100">
@@ -103,6 +100,7 @@ function getUserPosts() {
         </div>
                 `
                 postCard.innerHTML+=postData
+                addActions(post[i].id)
             }
     }
     )
@@ -216,3 +214,18 @@ function deletePost(id) {
     })
 }
 // end action list
+
+function addActions(id) {
+    let hC = document.querySelector(`.card-header${id}`)
+    let local = localStorage.getItem("user")
+    let myUserId = JSON.parse(local)
+    console.log(getId());
+    console.log(myUserId.user.id);
+    if (myUserId.user.id == getId()) {
+        hC.innerHTML+=`
+        <div class="action-btn action" onclick="showTheList(${id})">
+        <i class="fa-solid fa-ellipsis-vertical fs-14 p-2 action"></i>
+        </div>
+    `
+    }
+}

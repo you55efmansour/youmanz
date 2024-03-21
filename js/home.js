@@ -11,17 +11,14 @@ function getPosts( reload = true, pageNum = 1){
             let content = posts[i];
             let post = `
             <div class="card my-4 shadow">
-                <h5 class="card-header d-flex align-items-center gap-3 position-relative">
+                <h5 class="card-header${content.id} d-flex align-items-center gap-3 card-header position-relative">
                     <a href="#" onclick="getProf(${content.author.id})" class="p-pic rounded-circle">
                         <img class="img-fluid h-100 w-100" src="${(content.author.profile_image).length?content.author.profile_image:"../images/defult.png"}" alt="">
                     </a>
                     <a href="#" onclick="getProf(${content.author.id})">@${content.author.name}</a>
                     <p class="text-black-50 fw-semibold flex-grow-1 text-end fs-14">${content.created_at}</p>
-                    <div class="action-btn action" onclick="showTheList(${content.id})">
-                        <i class="fa-solid fa-ellipsis-vertical fs-14 p-2 action"></i>
-                    </div>
                     <div class="position-absolute rounded action action-list action-list${content.id} p-1 d-none">
-                        <button type="button" class="btn btn-primary my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(content))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
+                        <button type="button" class="btn btn-success my-1 d-block w-100" onclick="editPost('${encodeURIComponent(JSON.stringify(content))}')" data-bs-toggle="modal" data-bs-target="#edit-modal">
                             edit
                         </button>
                         <button type="button" onclick="deletePost(${content.id})" class="btn btn-danger my-1 d-block w-100" data-bs-toggle="modal" data-bs-target="#delete-modal">
@@ -51,7 +48,7 @@ function getPosts( reload = true, pageNum = 1){
                             
                             <div class="input-group my-3">
                                 <input id="comment-input${content.id}" class="form-control" placeholder="type your comment..." type="text" >
-                                <button class="btn btn-primary" onclick="addComment(${content.id})" type="button">send</button>
+                                <button class="btn btn-success" onclick="addComment(${content.id})" type="button">send</button>
                             </div>
 
                             <div onclick="hideComments(${content.id})" class="bg-secondary-subtle comment-btn hide-comments${content.id} text-center w-100">
@@ -67,6 +64,7 @@ function getPosts( reload = true, pageNum = 1){
         `;
         
         postContainer.innerHTML += post
+        addActions(content.author.id , content.id)
         }
     })
 }
@@ -253,6 +251,19 @@ function deletePost(id) {
         }
     )
     })
+}
+
+function addActions(id,postId) {
+    let hC = document.querySelector(`.card-header${postId}`)
+    let local = localStorage.getItem("user")
+    let myUserId = JSON.parse(local)
+    if (myUserId.user.id == id) {
+        hC.innerHTML+=`
+        <div class="action-btn action" onclick="showTheList(${postId})">
+        <i class="fa-solid fa-ellipsis-vertical fs-14 p-2 action"></i>
+        </div>
+    `
+    }
 }
 // end action list
 
