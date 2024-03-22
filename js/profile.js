@@ -28,6 +28,8 @@ function getUserInfo() {
             </div>
             `
             infCard.innerHTML=infData
+            const userName = document.querySelector(".posts-name")
+            userName.innerHTML=`${inf.name}`
         }
     )
 }
