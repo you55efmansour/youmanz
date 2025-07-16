@@ -46,10 +46,10 @@ function getPosts( reload = true, pageNum = 1){
                             <div class="d-flex flex-column justify-content-center comment-body${content.id}">
                             </div>
                             
-                            <div class="input-group my-3">
+                            <form class="input-group my-3" onsubmit="addComment(event ,${content.id})">
                                 <input id="comment-input${content.id}" class="form-control" placeholder="type your comment..." type="text" >
-                                <button class="btn btn-success" onclick="addComment(${content.id})" type="button">send</button>
-                            </div>
+                                <button class="btn btn-success" type="submit">send</button>
+                            </form>
 
                             <div onclick="hideComments(${content.id})" class="bg-secondary-subtle comment-btn hide-comments${content.id} text-center w-100">
                                 <i class="fa-solid fa-caret-up fs-5"></i>
@@ -267,9 +267,7 @@ function addActions(id,postId) {
 }
 // end action list
 
-function getProf(id) {
-    window.location = `profile.html?userid=${id}`
-}
+
 function sendUserID(){
     let a = localStorage.getItem("user")
     let user = JSON.parse(a)

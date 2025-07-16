@@ -13,6 +13,12 @@ function getAlert(message) {
         postContainer.append(alertDiv)
 }
 
+
+function getProf(id) {
+    window.location = `profile.html?userid=${id}`
+}
+
+
 // comments  
 function showComments(id) {
     axios.get(`https://tarmeezacademy.com/api/v1/posts/${id}`)
@@ -26,11 +32,11 @@ function showComments(id) {
         for (let i = 0; i < comments.length; i++) {
             commentBody[0].innerHTML+=`
             <div class="d-flex mt-3">
-                <a href="profile.html" class="p-pic rounded-circle">
+                <a href="#" onclick="getProf(${comments[i].author.id})" class="p-pic rounded-circle">
                     <img class="img-fluid h-100 w-100" src="${(comments[i].author.profile_image).length?comments[i].author.profile_image:"../images/defult.png"}" alt="">
                 </a>
                 <div class="text ms-2">
-                    <div class="fs-5 fw-semibold">@${comments[i].author.name}</div>
+                    <a href="#" onclick="getProf(${comments[i].author.id})" class="fs-5 fw-semibold">@${comments[i].author.name}</a>
                     <div>${comments[i].body}</div>
                 </div>
             </div>
@@ -44,7 +50,8 @@ function hideComments(id) {
     commentZone[0].classList.contains("d-none")?"":commentZone[0].classList.add("d-none");
 }
 
-function addComment(id) {
+function addComment(e,id) {
+    e.preventDefault()
     let comment = document.querySelector(`#comment-input${id}`)
     myComment = {
         "body":comment.value

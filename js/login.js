@@ -1,9 +1,10 @@
-let logIn = document.getElementById("login");
-let error = document.getElementById("error")
+const logIn = document.getElementById("login");
+const error = document.getElementById("error")
 const userName = document.getElementById("user-name");
 const password = document.getElementById("password");
+const form = document.querySelector(".login-form");
 
-logIn.addEventListener("click",(e)=>{
+const logInFunc = (e)=>{
     e.preventDefault()
     logIn.innerHTML=`<i class="fa-solid fa-spinner fa-spin"></i>`
 
@@ -17,6 +18,7 @@ logIn.addEventListener("click",(e)=>{
             localStorage.setItem("token",res.data.token)
             localStorage.setItem("user",JSON.stringify(res.data))
             window.location='home.html'
+            form.removeEventListener("submit",logInFunc)
         },
         (rej)=>{
             logIn.innerHTML=`Login`
@@ -25,4 +27,6 @@ logIn.addEventListener("click",(e)=>{
             error.innerHTML = `${message} <i class="fa-solid fa-triangle-exclamation ms-3 fa-beat-fade" style="color: red;"></i>`
         }
     )
-})
+}
+
+form.addEventListener("submit",logInFunc)

@@ -7,6 +7,8 @@ function getId() {
 const infCard = document.querySelector(".inf-card")
 function getUserInfo() {
     let id = getId();
+    console.log(id);
+    
     axios.get(`https://tarmeezacademy.com/api/v1/users/${id}`)
     .then(
         (res)=>{
